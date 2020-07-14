@@ -35,6 +35,8 @@ Additions to the Project:
  
 3. Basic Junit test were created to check the validity of each endpoint in Controller.
 
+Sidenote: When I started working on this I took ip blacklist table from db to create simple endpoint just to kick start everything. In the end I just kept it even though it is not part of the task. It would be a feature which would be useful in some cases.
+
 Credits to the Helpers(you all rock!!!):
 1. https://docs.spring.io/spring/docs/current/spring-framework-reference/index.html
 2. Presentations from college professor which is teaching JAVA in its full glory
