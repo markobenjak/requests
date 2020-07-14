@@ -38,7 +38,7 @@ Additions to the Project:
 Credits to the Helpers for this task(you all rock!!!):
 1. https://docs.spring.io/spring/docs/current/spring-framework-reference/index.html
 2. Presentations from college professor which is teaching JAVA in its full glory
-3. https://stackoverflow.com/ and different forums and sites
+3. https://stackoverflow.com/
 
 
 
