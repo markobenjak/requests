@@ -24,9 +24,26 @@ JSON format for POST endpoint:
 }
 
 DATATABASE
-Database used for this project was postgres. Exporterd datatabase will be in //TODO
+Database used for this project was postgres. Exporterd datatabase is in requests.sql file.
 Addition to the sql's for creating database, one more table was created in which are stored entire requests with original data.
-
+#################################################################
+CREATE SEQUENCE public.icoming_requests_id_seq
+    INCREMENT 1
+    START 147
+    MINVALUE 1
+    MAXVALUE 2147483647
+    CACHE 1;
+CREATE TABLE public.incoming_requests
+(
+    id integer NOT NULL DEFAULT nextval('icoming_requests_id_seq'::regclass),
+    tagid integer,
+    userid character varying(255) COLLATE pg_catalog."default",
+    remoteip character varying(25) COLLATE pg_catalog."default",
+    customerid integer,
+    "timestamp" timestamp without time zone,
+    CONSTRAINT icoming_requests_pkey PRIMARY KEY (id)
+)
+##################################################################
 Additions to the Project:
   1. As stated in Database section one more table was created. Table name is incoming_requests. I noticed that provided tables did not contain original requests format and it was not visible the amount of traffic or possible reasons why the requests would be invalid. By adding this table it will be easier to maintain and give customer feedback on possible reason for "declining" or marking the request as invalid. This would be possible as well through Logging system on Listening ports or implementing one in tthe Code itself.
  
