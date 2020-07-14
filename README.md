@@ -4,7 +4,7 @@ To run the Application:
 
   1.Run "requests-0.0.1-SNAPSHOT.jar" by double clicking on Windows or by command "java -jar requests-0.0.1-SNAPSHOT.jar" on Linux
   
-  2.Send the Json request to http://localhost:8080/
+  2.Send the Json request to http://localhost:8080/"endpoint"
 
 Possible Json formats and endpoints:
 
