@@ -20,7 +20,7 @@ JSON format for POST endpoint:
     "tagID":2,
     "userID":"TEST",
     "remoteIP":"123.234.56.78",
-    "timestamp":1594573581150 //date is calculated in LONG as was provided as example in task document, for the purpose and functionality please use current date and time
+    "timestamp":1594573581150 //date is calculated in LONG as was provided as example in task document, for the purpose and functionality please use long format but with the current date and time
 }
 
 DATATABASE
