@@ -6,7 +6,7 @@ To run the Application:
   
   2.Send the Json request to http://localhost:8080/"endpoint"
 
-Possible Json formats and endpoints:
+Possible Json formats and endpoints(I used Postman for sending requests):
 
   1. http://localhost:8080/ipBlacklist -> GET endpoint which lists all blacklisted ip's
   2. http://localhost:8080/requests -> GET enpoint which lists all requests in database
@@ -35,7 +35,10 @@ Additions to the Project:
  
 3. Basic Junit test were created to check the validity of each endpoint in Controller.
 
-Sidenote: When I started working on this I took ip blacklist table from db to create simple endpoint just to kick start everything. In the end I just kept it even though it is not part of the task. It would be a feature which would be useful in some cases.
+Sidenote: 
+1. When I started working on this I took ip blacklist table from db to create simple endpoint just to kick start everything. In the end I just kept it even though it is not part of the task. It would be a feature which would be useful in some cases.
+
+2. Code should return String to POST request which describes in some way what happened with the reqeust or if there were any Exceptions. 
 
 Credits to the Helpers(you all rock!!!):
 1. https://docs.spring.io/spring/docs/current/spring-framework-reference/index.html
