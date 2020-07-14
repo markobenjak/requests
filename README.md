@@ -36,9 +36,9 @@ Additions to the Project:
 3. Basic Junit test were created to check the validity of each endpoint in Controller.
 
 Credits to the Helpers for this task(you all rock!!!):
-https://docs.spring.io/spring/docs/current/spring-framework-reference/index.html
-Presentations from college professor which is teaching JAVA in its full glory
-https://stackoverflow.com/ and different forums and sites
+1. https://docs.spring.io/spring/docs/current/spring-framework-reference/index.html
+2. Presentations from college professor which is teaching JAVA in its full glory
+3. https://stackoverflow.com/ and different forums and sites
 
 
 
