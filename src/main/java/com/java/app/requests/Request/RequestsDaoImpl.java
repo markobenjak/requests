@@ -73,7 +73,7 @@ public class RequestsDaoImpl implements RequestsDao {
 		}else if(listOfUa.contains(requests.getUserID())){
 			returnString = returnString + "User blacklisted ";
 			valid = false;
-		}else if(userActivity == 0){
+		}else if(userActivity == null || userActivity == 0){
 			returnString = returnString + "Customer not Active ";
 			valid = false;
 		}else{
@@ -126,7 +126,7 @@ public class RequestsDaoImpl implements RequestsDao {
 			customerResult = (Map<String, Object>) jdbcTemplate
 					.queryForMap(checkIfCustomerTimeExsistsSql, new Object[]{requests.getCustomerID()});
 		}catch(Exception e){
-
+			returnString = returnString + e;
 		}
 
 		try {
@@ -170,7 +170,6 @@ public class RequestsDaoImpl implements RequestsDao {
 
 			}
 		}catch(Exception e){
-			System.out.println(e);
 			returnString = returnString + e;
 		}
 //		Long i = new Date().getTime(); //get date in LONG to know value for JSON
@@ -195,14 +194,14 @@ public class RequestsDaoImpl implements RequestsDao {
 			customerStatistic = (Map<String, Object>) jdbcTemplate
 					.queryForMap(checkIfCustomerTimeExsistsSql, new Object[]{customerId});
 		}catch(Exception e){
-			System.out.println(e);
+			returnString = returnString + e;
 		}
 
 		if(customerStatistic != null){
 			BigDecimal validRequests = customerStatistic.get("valid") == null ? BigDecimal.valueOf(0) : (BigDecimal) customerStatistic.get("valid");
 			BigDecimal invalidRequests = customerStatistic.get("invalid") == null ? BigDecimal.valueOf(0) : (BigDecimal) customerStatistic.get("invalid");
 
-			returnString = returnString + "Customer had "
+			returnString = returnString + " Customer had "
 					+ validRequests
 					+ " valid requests and "
 					+ invalidRequests
@@ -221,14 +220,14 @@ public class RequestsDaoImpl implements RequestsDao {
 			customerStatisticDay = (Map<String, Object>) jdbcTemplate
 					.queryForMap(StatsPerDay);
 		}catch(Exception e){
-			System.out.println(e);
+			returnString = returnString + e;
 		}
 
 		if(customerStatisticDay != null){
 			BigDecimal validRequests = customerStatisticDay.get("valid") == null ? BigDecimal.valueOf(0) : (BigDecimal) customerStatisticDay.get("valid");
 			BigDecimal invalidRequests = customerStatisticDay.get("invalid") == null ? BigDecimal.valueOf(0) : (BigDecimal) customerStatisticDay.get("invalid");
 
-			returnString = returnString + "Number of requests on "
+			returnString = returnString + " Number of requests on "
 					+ day
 					+ " were: "
 					+ validRequests
