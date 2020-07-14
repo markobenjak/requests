@@ -28,11 +28,12 @@ Database used for this project was postgres 12. Exporterd datatabase is in reque
 Addition to the sql's for creating database provided in the task description, one more table was created in which are stored entire requests with original data. Create table and sequnce for that is in the file requests.sql
 
 Additions to the Project:
-  1. As stated in Database section one more table was created. Table name is incoming_requests. I noticed that provided tables did not contain original requests format and it was not visible the amount of traffic or possible reasons why the requests would be invalid. By adding this table it will be easier to maintain and give customer feedback on possible reason for "declining" or marking the request as invalid. This would be possible as well through Logging system on Listening ports or implementing one in the Code itself.
+
+1. As stated in Database section one more table was created. Table name is incoming_requests. I noticed that provided tables did not contain original requests format and it was not visible the amount of traffic or possible reasons why the requests would be invalid. By adding this table it will be easier to maintain and give customer feedback on possible reason for "declining" or marking the request as invalid. This would be possible as well through Logging system on Listening ports or implementing one in the Code itself.
  
- 2.Quartz Scheduler was implemented in the code. Quartz is a scheduler witch activates when called by interval or triggered by event. For this task Quartz is called every 6 hours and when called it deletes data from new table incoming_requests older than 1 day. This serves as cleaning mechanism of the table which stores all of the incoming requests. Of course 6 hour interval is very small for deleting data from database, but it is used to showcase functionality which would be very useful in the project with high traffic.
+2.Quartz Scheduler was implemented in the code. Quartz is a scheduler witch activates when called by interval or triggered by event. For this task Quartz is called every 6 hours and when called it deletes data from new table incoming_requests older than 1 day. This serves as cleaning mechanism of the table which stores all of the incoming requests. Of course 6 hour interval is very small for deleting data from database, but it is used to showcase functionality which would be very useful in the project with high traffic.
  
- 3. Basic Junit test were created to check the validity of each endpoint in Controller.
+3. Basic Junit test were created to check the validity of each endpoint in Controller.
 
 
 
