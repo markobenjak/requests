@@ -4,9 +4,9 @@ To run the Application:
 
   1.Run "requests-0.0.1-SNAPSHOT.jar" by double clicking on Windows or by command "java -jar requests-0.0.1-SNAPSHOT.jar" on Linux
   
-  2.Send the Json request to http://localhost:8080/
+  2.Send the Json request to http://localhost:8080/"endpoint"
 
-Possible Json formats and endpoints:
+Possible Json formats and endpoints(I used Postman for sending requests):
 
   1. http://localhost:8080/ipBlacklist -> GET endpoint which lists all blacklisted ip's
   2. http://localhost:8080/requests -> GET enpoint which lists all requests in database
@@ -20,7 +20,7 @@ JSON format for POST endpoint:
     "tagID":2,
     "userID":"TEST",
     "remoteIP":"123.234.56.78",
-    "timestamp":1594573581150 //date is calculated in LONG as was provided as example in task document, for the purpose and functionality please use current date and time
+    "timestamp":1594573581150 //date is calculated in LONG as was provided as example in task document, for the purpose and functionality please use long format but with the current date and time
 }
 
 DATATABASE
@@ -34,6 +34,16 @@ Additions to the Project:
 2. Quartz Scheduler was implemented in the code. Quartz is a scheduler witch activates when called by interval or triggered by event. For this task Quartz is called every 6 hours and when called it deletes data from new table incoming_requests older than 1 day. This serves as cleaning mechanism of the table which stores all of the incoming requests. Of course 6 hour interval is very small for deleting data from database, but it is used to showcase functionality which would be very useful in the project with high traffic.
  
 3. Basic Junit test were created to check the validity of each endpoint in Controller.
+
+Sidenote: 
+1. When I started working on this I took ip blacklist table from db to create simple endpoint just to kick start everything. In the end I just kept it even though it is not part of the task. It would be a feature which would be useful in some cases.
+
+2. Code should return String to POST request which describes in some way what happened with the reqeust or if there were any Exceptions. 
+
+Credits to the Helpers(you all rock!!!):
+1. https://docs.spring.io/spring/docs/current/spring-framework-reference/index.html
+2. Presentations from college professor which is teaching JAVA in its full glory
+3. https://stackoverflow.com/
 
 
 
