@@ -39,7 +39,7 @@ Sidenote:
 
 2. Code should return String to POST request which describes in some way what happened with the reqeust or if there were any Exceptions. 
 
-Credits to the Helpers(you all rock!!!):
+Credits to the Helpers:
 1. https://docs.spring.io/spring/docs/current/spring-framework-reference/index.html
 3. https://stackoverflow.com/
 
